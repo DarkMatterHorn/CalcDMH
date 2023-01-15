@@ -1,63 +1,66 @@
+import java.io.IOException;
 import java.util.Scanner;
 import java.util.regex.Pattern;
-public class Calc {
-    public static void main(String[] args) {
+public class Main {
+    public static void main(String[] args) throws Exception{
         Scanner scan = new Scanner(System.in);
         String s = scan.nextLine(); //где s - выражение (Input:)
-        //переменные, которые потом будут изменяться
-        int inta1 = 0;  int intb1 = 0;
-        int inta2 = 0;  int intb2 = 0;
-        int inta3 = 0;  int intb3 = 0;
-        int inta4 = 0;  int intb4 = 0;
-        String rim1res1 = "";   String rim2res1 = "";
-        String rim1res2 = "";   String rim2res2 = "";
-        String rim1res3 = "";   String rim2res3 = "";
-        String rim1res4 = "";   String rim2res4 = "";
-        int switchcase = 0; // Переменная для операций
-        int indexI = s.indexOf("I"); //indexI ищет символ I
-        int indexV = s.indexOf("V"); //indexV ищет символ V
-        int indexX = s.indexOf("X"); //indexX ищет символ X
-        int index0 = s.indexOf("0"); //index0 ищет символ 0
-        int index1 = s.indexOf("1"); //index1 ищет символ 1
-        int index2 = s.indexOf("2"); //index2 ищет символ 2
-        int index3 = s.indexOf("3"); //index3 ищет символ 3
-        int index4 = s.indexOf("4"); //index4 ищет символ 4
-        int index5 = s.indexOf("5"); //index5 ищет символ 5
-        int index6 = s.indexOf("6"); //index6 ищет символ 6
-        int index7 = s.indexOf("7"); //index7 ищет символ 7
-        int index8 = s.indexOf("8"); //index8 ищет символ 8
-        int index9 = s.indexOf("9"); //index9 ищет символ 9
-        int indexPlus = s.indexOf("+");         //indexPlus ищет первый символ +
-        int indexMinus = s.indexOf("-");        //indexMinus ищет первый символ -
-        int indexUmnojenie = s.indexOf("*");    //indexUmnojenie ищет первый символ *
-        int indexDelenie = s.indexOf("/");      //indexDelenie ищет первый символ /
-        int indexPlusEnd = s.lastIndexOf("+");         //indexPlus ищет первый символ +
-        int indexMinusEnd = s.lastIndexOf("-");        //indexMinus ищет первый символ -
-        int indexUmnojenieEnd = s.lastIndexOf("*");    //indexUmnojenie ищет первый символ *
-        int indexDelenieEnd = s.lastIndexOf("/");      //indexDelenie ищет первый символ /
-        boolean bPlus = s.startsWith("+");          //bPlus ищет символ + в начале строки
-        boolean bMinus = s.startsWith("-");         //bMinus ищет символ - в начале строки
-        boolean bUmnojenie = s.startsWith("*");     //bUmnojenie ищет символ * в начале строки
-        boolean bDelenie = s.startsWith("/");       //bDelenie ищет символ / в начале строки
-        boolean bPlusEnd = s.endsWith("+");         //bPlusEnd ищет символ + в конце строки
-        boolean bMinusEnd = s.endsWith("-");        //bMinusEnd ищет символ -  в конце строки
-        boolean bUmnojenieEnd = s.endsWith("*");    //bUmnojenieEnd ищет символ * в конце строки
-        boolean bDelenieEnd = s.endsWith("/");      //bDelenieEnd ищет символ / в конце строки
+        String a = calc(s);}
+    public static String calc(String input) throws Exception {
+            // переменные, которые потом будут изменяться
+            int inta1 = 0;  int intb1 = 0;
+            int inta2 = 0;  int intb2 = 0;
+            int inta3 = 0;  int intb3 = 0;
+            int inta4 = 0;  int intb4 = 0;
+            String rim1res1 = "";   String rim2res1 = "";
+            String rim1res2 = "";   String rim2res2 = "";
+            String rim1res3 = "";   String rim2res3 = "";
+            String rim1res4 = "";   String rim2res4 = "";
+            int switchcase = 0; // Переменная для операций
+            int indexI = input.indexOf("I"); //indexI ищет символ I
+            int indexV = input.indexOf("V"); //indexV ищет символ V
+            int indexX = input.indexOf("X"); //indexX ищет символ X
+            int index0 = input.indexOf("0"); //index0 ищет символ 0
+            int index1 = input.indexOf("1"); //index1 ищет символ 1
+            int index2 = input.indexOf("2"); //index2 ищет символ 2
+            int index3 = input.indexOf("3"); //index3 ищет символ 3
+            int index4 = input.indexOf("4"); //index4 ищет символ 4
+            int index5 = input.indexOf("5"); //index5 ищет символ 5
+            int index6 = input.indexOf("6"); //index6 ищет символ 6
+            int index7 = input.indexOf("7"); //index7 ищет символ 7
+            int index8 = input.indexOf("8"); //index8 ищет символ 8
+            int index9 = input.indexOf("9"); //index9 ищет символ 9
+            int indexPlus = input.indexOf("+");         //indexPlus ищет первый символ +
+            int indexMinus = input.indexOf("-");        //indexMinus ищет первый символ -
+            int indexUmnojenie = input.indexOf("*");    //indexUmnojenie ищет первый символ *
+            int indexDelenie = input.indexOf("/");      //indexDelenie ищет первый символ /
+            int indexPlusEnd = input.lastIndexOf("+");         //indexPlus ищет первый символ +
+            int indexMinusEnd = input.lastIndexOf("-");        //indexMinus ищет первый символ -
+            int indexUmnojenieEnd = input.lastIndexOf("*");    //indexUmnojenie ищет первый символ *
+            int indexDelenieEnd = input.lastIndexOf("/");      //indexDelenie ищет первый символ /
+            boolean bPlus = input.startsWith("+");          //bPlus ищет символ + в начале строки
+            boolean bMinus = input.startsWith("-");         //bMinus ищет символ - в начале строки
+            boolean bUmnojenie = input.startsWith("*");     //bUmnojenie ищет символ * в начале строки
+            boolean bDelenie = input.startsWith("/");       //bDelenie ищет символ / в начале строки
+            boolean bPlusEnd = input.endsWith("+");         //bPlusEnd ищет символ + в конце строки
+            boolean bMinusEnd = input.endsWith("-");        //bMinusEnd ищет символ -  в конце строки
+            boolean bUmnojenieEnd = input.endsWith("*");    //bUmnojenieEnd ищет символ * в конце строки
+            boolean bDelenieEnd = input.endsWith("/");      //bDelenieEnd ищет символ / в конце строки
         //Какая операция будет выполняться
         if (indexPlus > -1) {               switchcase = 1; // + = 1
         } else if (indexMinus > -1) {       switchcase = 2; // - = 2
         } else if (indexUmnojenie > -1) {   switchcase = 3; // * = 3
         } else if (indexDelenie > -1) {     switchcase = 4; // / = 4
-        } else {System.out.println("throws Exception //т.к. строка не является математической операцией");return;}
+        } else {throw new Exception();}
         //Проверка на кол-во операций (+ и -) или (+ и *) или (+ и /) или (- и *) или (- и /) или (* и /)
         if ((indexPlus > -1 && indexMinus > -1) || (indexPlus > -1 && indexUmnojenie > -1) || (indexPlus > -1 && indexDelenie > -1) || (indexMinus > -1 && indexUmnojenie > -1) || (indexMinus > -1 && indexDelenie > -1) || (indexUmnojenie > -1 && indexDelenie > -1) ) {
-            System.out.println("throws Exception //т.к. формат математической операции не удовлетворяет заданию - два операнда и один оператор (+, -, /, *)"); return;}
+            throw new Exception("throws Exception //т.к. формат математической операции не удовлетворяет заданию - два операнда и один оператор (+, -, /, *)");}
         //Проверка на кол-во операций (+ и +) или (- и -) или (* и *) или (/ и /)
         if ( (indexPlus != indexPlusEnd) || (indexMinus != indexMinusEnd) || (indexUmnojenie != indexUmnojenieEnd) || (indexDelenie != indexDelenieEnd) ){
-            System.out.println("throws Exception //т.к. формат математической операции не удовлетворяет заданию - два операнда и один оператор (+, -, /, *)"); return;}
+            throw new Exception("throws Exception //т.к. формат математической операции не удовлетворяет заданию - два операнда и один оператор (+, -, /, *)");}
         //Проверка на правильные начало и конец строки
         if (bPlus || bMinus || bUmnojenie || bDelenie || bPlusEnd || bMinusEnd || bUmnojenieEnd || bDelenieEnd) {
-            System.out.println("Исключение"); return;}
+            throw new Exception();}
         //Поиск I, V, X
         if (indexI > -1 || indexV > -1 || indexX > -1) {
             //Проверка на отсутсиве цифр, если нашлись I или V или X
@@ -66,7 +69,7 @@ public class Calc {
                 switch (switchcase) {
                     case 1: //+
                         String[] rimnum1 = new String[10];
-                        rimnum1 = s.split(Pattern.quote(" + ")); //Разделение на два числа от знака
+                        rimnum1 = input.split(Pattern.quote(" + ")); //Разделение на два числа от знака
                         String a1 = rimnum1[0]; //Первое число
                         String b1 = rimnum1[1]; //Второе число
                         switch (a1) {
@@ -80,7 +83,7 @@ public class Calc {
                             case "VIII":    inta1 = 8;  break;
                             case "IX":      inta1 = 9;  break;
                             case "X":       inta1 = 10; break;
-                            default:    System.out.println("Исключение");   return;} //Перевод первого числа
+                            default: throw new Exception();} //Перевод первого числа
                         switch (b1) {
                             case "I":       intb1 = 1;  break;
                             case "II":      intb1 = 2;  break;
@@ -92,7 +95,7 @@ public class Calc {
                             case "VIII":    intb1 = 8;  break;
                             case "IX":      intb1 = 9;  break;
                             case "X":       intb1 = 10; break;
-                            default:    System.out.println("Исключение");   return;} //Перевод второго числа
+                            default: throw new Exception();} //Перевод второго числа
                         int res1 = inta1 + intb1; //Операция
                         switch (res1) {
                             case 1:     System.out.println("I");    break;
@@ -108,32 +111,32 @@ public class Calc {
                             case 50:    System.out.println("L");    break;
                             case 100:   System.out.println("C");    break;
                             default:    int num1res1 = res1 / 10;
-                                        int num2res1 = res1 % 10;
-                                        switch (num1res1) {
-                                            case 1: rim1res1 = "X";     break;
-                                            case 2: rim1res1 = "XX";    break;
-                                            case 3: rim1res1 = "XXX";   break;
-                                            case 4: rim1res1 = "XL";    break;
-                                            case 5: rim1res1 = "L";     break;
-                                            case 6: rim1res1 = "LX";    break;
-                                            case 7: rim1res1 = "LXX";   break;
-                                            case 8: rim1res1 = "LXXX";  break;
-                                            case 9: rim1res1 = "XC";    break;}
-                                        switch (num2res1) {
-                                            case 1: rim2res1 = "I";     break;
-                                            case 2: rim2res1 = "II";    break;
-                                            case 3: rim2res1 = "III";   break;
-                                            case 4: rim2res1 = "IV";    break;
-                                            case 5: rim2res1 = "V";     break;
-                                            case 6: rim2res1 = "VI";    break;
-                                            case 7: rim2res1 = "VII";   break;
-                                            case 8: rim2res1 = "VIII";  break;
-                                            case 9: rim2res1 = "IX";    break;}
-                                        System.out.println(rim1res1 + "" + rim2res1);   break; } //Перевод результата операции и вывод
+                                int num2res1 = res1 % 10;
+                                switch (num1res1) {
+                                    case 1: rim1res1 = "X";     break;
+                                    case 2: rim1res1 = "XX";    break;
+                                    case 3: rim1res1 = "XXX";   break;
+                                    case 4: rim1res1 = "XL";    break;
+                                    case 5: rim1res1 = "L";     break;
+                                    case 6: rim1res1 = "LX";    break;
+                                    case 7: rim1res1 = "LXX";   break;
+                                    case 8: rim1res1 = "LXXX";  break;
+                                    case 9: rim1res1 = "XC";    break;}
+                                switch (num2res1) {
+                                    case 1: rim2res1 = "I";     break;
+                                    case 2: rim2res1 = "II";    break;
+                                    case 3: rim2res1 = "III";   break;
+                                    case 4: rim2res1 = "IV";    break;
+                                    case 5: rim2res1 = "V";     break;
+                                    case 6: rim2res1 = "VI";    break;
+                                    case 7: rim2res1 = "VII";   break;
+                                    case 8: rim2res1 = "VIII";  break;
+                                    case 9: rim2res1 = "IX";    break;}
+                                System.out.println(rim1res1 + "" + rim2res1);   break; } //Перевод результата операции и вывод
                         break;
                     case 2: //-
                         String[] rimnum2 = new String[10];
-                        rimnum2 = s.split(Pattern.quote(" - "));
+                        rimnum2 = input.split(Pattern.quote(" - "));
                         String a2 = rimnum2[0];
                         String b2 = rimnum2[1];
                         switch (a2) {
@@ -147,7 +150,7 @@ public class Calc {
                             case "VIII":    inta2 = 8;  break;
                             case "IX":      inta2 = 9;  break;
                             case "X":       inta2 = 10; break;
-                            default:    System.out.println("Исключение");   return;}
+                            default: throw new Exception();}
                         switch (b2) {
                             case "I":       intb2 = 1;  break;
                             case "II":      intb2 = 2;  break;
@@ -159,10 +162,10 @@ public class Calc {
                             case "VIII":    intb2 = 8;  break;
                             case "IX":      intb2 = 9;  break;
                             case "X":       intb2 = 10; break;
-                            default: System.out.println("Исключение");  return;}
+                            default: throw new Exception();}
                         int res2 = inta2 - intb2;
                         if (res2 <= 0){
-                            System.out.println("throws Exception //т.к. в римской системе нет отрицательных чисел и нуля"); return;}
+                            throw new Exception("throws Exception //т.к. в римской системе нет отрицательных чисел и нуля");}
                         switch (res2) {
                             case 1:     System.out.println("I");    break;
                             case 2:     System.out.println("II");   break;
@@ -177,32 +180,32 @@ public class Calc {
                             case 50:    System.out.println("L");    break;
                             case 100:   System.out.println("C");    break;
                             default:    int num1res2 = res2 / 10;
-                                        int num2res2 = res2 % 10;
-                                        switch (num2res2) {
-                                            case 1: rim1res2 = "X";     break;
-                                            case 2: rim1res2 = "XX";    break;
-                                            case 3: rim1res2 = "XXX";   break;
-                                            case 4: rim1res2 = "XL";    break;
-                                            case 5: rim1res2 = "L";     break;
-                                            case 6: rim1res2 = "LX";    break;
-                                            case 7: rim1res2 = "LXX";   break;
-                                            case 8: rim1res2 = "LXXX";  break;
-                                            case 9: rim1res2 = "XC";    break;}
-                                        switch (num2res2) {
-                                            case 1: rim2res2 = "I";     break;
-                                            case 2: rim2res2 = "II";    break;
-                                            case 3: rim2res2 = "III";   break;
-                                            case 4: rim2res2 = "IV";    break;
-                                            case 5: rim2res2 = "V";     break;
-                                            case 6: rim2res2 = "VI";    break;
-                                            case 7: rim2res2 = "VII";   break;
-                                            case 8: rim2res2 = "VIII";  break;
-                                            case 9: rim2res2 = "IX";    break;}
-                                        System.out.println(rim1res2 + "" + rim2res2);   break;}
+                                int num2res2 = res2 % 10;
+                                switch (num2res2) {
+                                    case 1: rim1res2 = "X";     break;
+                                    case 2: rim1res2 = "XX";    break;
+                                    case 3: rim1res2 = "XXX";   break;
+                                    case 4: rim1res2 = "XL";    break;
+                                    case 5: rim1res2 = "L";     break;
+                                    case 6: rim1res2 = "LX";    break;
+                                    case 7: rim1res2 = "LXX";   break;
+                                    case 8: rim1res2 = "LXXX";  break;
+                                    case 9: rim1res2 = "XC";    break;}
+                                switch (num2res2) {
+                                    case 1: rim2res2 = "I";     break;
+                                    case 2: rim2res2 = "II";    break;
+                                    case 3: rim2res2 = "III";   break;
+                                    case 4: rim2res2 = "IV";    break;
+                                    case 5: rim2res2 = "V";     break;
+                                    case 6: rim2res2 = "VI";    break;
+                                    case 7: rim2res2 = "VII";   break;
+                                    case 8: rim2res2 = "VIII";  break;
+                                    case 9: rim2res2 = "IX";    break;}
+                                System.out.println(rim1res2 + "" + rim2res2);   break;}
                         break;
                     case 3: //*
                         String[] rimnum3 = new String[10];
-                        rimnum3 = s.split(Pattern.quote(" * "));
+                        rimnum3 = input.split(Pattern.quote(" * "));
                         String a3 = rimnum3[0];
                         String b3 = rimnum3[1];
                         switch (a3) {
@@ -216,7 +219,7 @@ public class Calc {
                             case "VIII":    inta3 = 8;  break;
                             case "IX":      inta3 = 9;  break;
                             case "X":       inta3 = 10; break;
-                            default: System.out.println("Исключение");return;}
+                            default: throw new Exception();}
                         switch (b3) {
                             case "I":       intb3 = 1;break;
                             case "II":      intb3 = 2;break;
@@ -228,7 +231,7 @@ public class Calc {
                             case "VIII":    intb3 = 8;break;
                             case "IX":      intb3 = 9;break;
                             case "X":       intb3 = 10;break;
-                            default: System.out.println("Исключение");return;}
+                            default:throw new Exception();}
                         int res3 = inta3 * intb3;
                         switch (res3) {
                             case 1:     System.out.println("I");    break;
@@ -244,32 +247,32 @@ public class Calc {
                             case 50:    System.out.println("L");    break;
                             case 100:   System.out.println("C");    break;
                             default:    int num1res3 = res3 / 10;
-                                        int num2res3 = res3 % 10;
-                                        switch (num1res3) {
-                                            case 1: rim1res3 = "X";     break;
-                                            case 2: rim1res3 = "XX";    break;
-                                            case 3: rim1res3 = "XXX";   break;
-                                            case 4: rim1res3 = "XL";    break;
-                                            case 5: rim1res3 = "L";     break;
-                                            case 6: rim1res3 = "LX";    break;
-                                            case 7: rim1res3 = "LXX";   break;
-                                            case 8: rim1res3 = "LXXX";  break;
-                                            case 9: rim1res3 = "XC";    break;}
-                                        switch (num2res3) {
-                                            case 1: rim2res3 = "I";     break;
-                                            case 2: rim2res3 = "II";    break;
-                                            case 3: rim2res3 = "III";   break;
-                                            case 4: rim2res3 = "IV";    break;
-                                            case 5: rim2res3 = "V";     break;
-                                            case 6: rim2res3 = "VI";    break;
-                                            case 7: rim2res3 = "VII";   break;
-                                            case 8: rim2res3 = "VIII";  break;
-                                            case 9: rim2res3 = "IX";    break;}
-                                        System.out.println(rim1res3 + "" + rim2res3);   break;}
+                                int num2res3 = res3 % 10;
+                                switch (num1res3) {
+                                    case 1: rim1res3 = "X";     break;
+                                    case 2: rim1res3 = "XX";    break;
+                                    case 3: rim1res3 = "XXX";   break;
+                                    case 4: rim1res3 = "XL";    break;
+                                    case 5: rim1res3 = "L";     break;
+                                    case 6: rim1res3 = "LX";    break;
+                                    case 7: rim1res3 = "LXX";   break;
+                                    case 8: rim1res3 = "LXXX";  break;
+                                    case 9: rim1res3 = "XC";    break;}
+                                switch (num2res3) {
+                                    case 1: rim2res3 = "I";     break;
+                                    case 2: rim2res3 = "II";    break;
+                                    case 3: rim2res3 = "III";   break;
+                                    case 4: rim2res3 = "IV";    break;
+                                    case 5: rim2res3 = "V";     break;
+                                    case 6: rim2res3 = "VI";    break;
+                                    case 7: rim2res3 = "VII";   break;
+                                    case 8: rim2res3 = "VIII";  break;
+                                    case 9: rim2res3 = "IX";    break;}
+                                System.out.println(rim1res3 + "" + rim2res3);   break;}
                         break;
                     case 4: ///
                         String[] rimnum4 = new String[10];
-                        rimnum4 = s.split(Pattern.quote(" / "));
+                        rimnum4 = input.split(Pattern.quote(" / "));
                         String a4 = rimnum4[0];
                         String b4 = rimnum4[1];
                         switch (a4) {
@@ -283,7 +286,7 @@ public class Calc {
                             case "VIII":    inta4 = 8;  break;
                             case "IX":      inta4 = 9;  break;
                             case "X":       inta4 = 10; break;
-                            default: System.out.println("Исключение");return;}
+                            default: throw new Exception();}
                         switch (b4) {
                             case "I":       intb4 = 1;  break;
                             case "II":      intb4 = 2;  break;
@@ -295,7 +298,7 @@ public class Calc {
                             case "VIII":    intb4 = 8;  break;
                             case "IX":      intb4 = 9;  break;
                             case "X":       intb4 = 10; break;
-                            default: System.out.println("Исключение");  return;}
+                            default: throw new Exception();}
                         int res4 = inta4 / intb4;
                         switch (res4) {
                             case 1:     System.out.println("I");    break;
@@ -311,36 +314,36 @@ public class Calc {
                             case 50:    System.out.println("L");    break;
                             case 100:   System.out.println("C");    break;
                             default:    int num1res4 = res4 / 10;
-                                        int num2res4 = res4 % 10;
-                                        switch (num1res4) {
-                                            case 1: rim1res4 = "X";     break;
-                                            case 2: rim1res4 = "XX";    break;
-                                            case 3: rim1res4 = "XXX";   break;
-                                            case 4: rim1res4 = "XL";    break;
-                                            case 5: rim1res4 = "L";     break;
-                                            case 6: rim1res4 = "LX";    break;
-                                            case 7: rim1res4 = "LXX";   break;
-                                            case 8: rim1res4 = "LXXX";  break;
-                                            case 9: rim1res4 = "XC";    break;}
-                                        switch (num2res4) {
-                                            case 1: rim2res4 = "I";     break;
-                                            case 2: rim2res4 = "II";    break;
-                                            case 3: rim2res4 = "III";   break;
-                                            case 4: rim2res4 = "IV";    break;
-                                            case 5: rim2res4 = "V";     break;
-                                            case 6: rim2res4 = "VI";    break;
-                                            case 7: rim2res4 = "VII";   break;
-                                            case 8: rim2res4 = "VIII";  break;
-                                            case 9: rim2res4 = "IX";    break;}
-                                        System.out.println(rim1res4 + "" + rim2res4);   break;}
+                                int num2res4 = res4 % 10;
+                                switch (num1res4) {
+                                    case 1: rim1res4 = "X";     break;
+                                    case 2: rim1res4 = "XX";    break;
+                                    case 3: rim1res4 = "XXX";   break;
+                                    case 4: rim1res4 = "XL";    break;
+                                    case 5: rim1res4 = "L";     break;
+                                    case 6: rim1res4 = "LX";    break;
+                                    case 7: rim1res4 = "LXX";   break;
+                                    case 8: rim1res4 = "LXXX";  break;
+                                    case 9: rim1res4 = "XC";    break;}
+                                switch (num2res4) {
+                                    case 1: rim2res4 = "I";     break;
+                                    case 2: rim2res4 = "II";    break;
+                                    case 3: rim2res4 = "III";   break;
+                                    case 4: rim2res4 = "IV";    break;
+                                    case 5: rim2res4 = "V";     break;
+                                    case 6: rim2res4 = "VI";    break;
+                                    case 7: rim2res4 = "VII";   break;
+                                    case 8: rim2res4 = "VIII";  break;
+                                    case 9: rim2res4 = "IX";    break;}
+                                System.out.println(rim1res4 + "" + rim2res4);   break;}
                         break;
-                    default: System.out.println("throws Exception //т.к. строка не является математической операцией"); break;}
-            } else {System.out.println("throws Exception //т.к. используются одновременно разные системы счисления");}
+                    default: throw new Exception();}
+            } else {throw new Exception("throws Exception //т.к. используются одновременно разные системы счисления");}
         } else if (index0 > -1 || index1 > -1 || index2 > -1 || index3 > -1 || index4 > -1 || index5 > -1 || index6 > -1 || index7 > -1 || index8 > -1 || index9 > -1) {
             switch (switchcase) {
                 case 1: //+
                     String[] num1 = new String[10];
-                    num1 = s.split(Pattern.quote(" + ")); //Разделение на два числа от знака
+                    num1 = input.split(Pattern.quote(" + ")); //Разделение на два числа от знака
                     String a1 = num1[0];
                     String b1 = num1[1];
                     switch (a1) {
@@ -354,7 +357,7 @@ public class Calc {
                         case "8": inta1 = 8;    break;
                         case "9": inta1 = 9;    break;
                         case "10": inta1 = 10;  break;
-                        default: System.out.println("Исключение");  return;}
+                        default: throw new Exception();}
                     switch (b1) {
                         case "1": intb1 = 1;    break;
                         case "2": intb1 = 2;    break;
@@ -366,13 +369,13 @@ public class Calc {
                         case "8": intb1 = 8;    break;
                         case "9": intb1 = 9;    break;
                         case "10": intb1 = 10;  break;
-                        default: System.out.println("Исключение");  return;}
+                        default: throw new Exception();}
                     int res1 = inta1 + intb1;
                     System.out.println(res1);
                     break;
                 case 2: //-
                     String[] num2 = new String[10];
-                    num2 = s.split(Pattern.quote(" - "));
+                    num2 = input.split(Pattern.quote(" - "));
                     String a2 = num2[0];
                     String b2 = num2[1];
                     switch (a2) {
@@ -386,7 +389,7 @@ public class Calc {
                         case "8": inta2 = 8;    break;
                         case "9": inta2 = 9;    break;
                         case "10": inta2 = 10;  break;
-                        default: System.out.println("Исключение");return;}
+                        default: throw new Exception();}
                     switch (b2) {
                         case "1": intb2 = 1;break;
                         case "2": intb2 = 2;break;
@@ -398,13 +401,13 @@ public class Calc {
                         case "8": intb2 = 8;break;
                         case "9": intb2 = 9;break;
                         case "10": intb2 = 10;break;
-                        default: System.out.println("Исключение");return;}
+                        default: throw new Exception();}
                     int res2 = inta2 - intb2;
                     System.out.println(res2);
                     break;
                 case 3: //*
                     String[] num3 = new String[10];
-                    num3 = s.split(Pattern.quote(" * "));
+                    num3 = input.split(Pattern.quote(" * "));
                     String a3 = num3[0];
                     String b3 = num3[1];
                     switch (a3) {
@@ -418,7 +421,7 @@ public class Calc {
                         case "8": inta3 = 8;    break;
                         case "9": inta3 = 9;    break;
                         case "10": inta3 = 10;  break;
-                        default: System.out.println("Исключение");  return;}
+                        default: throw new Exception();}
                     switch (b3) {
                         case "1": intb3 = 1;    break;
                         case "2": intb3 = 2;    break;
@@ -430,13 +433,13 @@ public class Calc {
                         case "8": intb3 = 8;    break;
                         case "9": intb3 = 9;    break;
                         case "10": intb3 = 10;  break;
-                        default: System.out.println("Исключение");  return;}
+                        default: throw new Exception();}
                     int res3 = inta3 * intb3;
                     System.out.println(res3);
                     break;
                 case 4: ///
                     String[] num4 = new String[10];
-                    num4 = s.split(Pattern.quote(" / "));
+                    num4 = input.split(Pattern.quote(" / "));
                     String a4 = num4[0];
                     String b4 = num4[1];
                     switch (a4) {
@@ -450,7 +453,7 @@ public class Calc {
                         case "8": inta4 = 8;    break;
                         case "9": inta4 = 9;    break;
                         case "10": inta4 = 10;  break;
-                        default: System.out.println("Исключение");  return;}
+                        default: throw new Exception();}
                     switch (b4) {
                         case "1": intb4 = 1;    break;
                         case "2": intb4 = 2;    break;
@@ -462,14 +465,11 @@ public class Calc {
                         case "8": intb4 = 8;    break;
                         case "9": intb4 = 9;    break;
                         case "10": intb4 = 10;  break;
-                        default: System.out.println("Исключение");  return;}
+                        default: throw new Exception();}
                     int res4 = inta4 / intb4;
                     System.out.println(res4);
                     break;
-                default:
-                    System.out.println("throws Exception //т.к. строка не является математической операцией");
-                    break;
-            }
+                default: throw new Exception("throws Exception //т.к. строка не является математической операцией");}
         }
-    }
+        return"";} //я не смог самостоятельно выяснить зачем среда просит меня это вставить
 }
